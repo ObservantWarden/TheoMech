@@ -1,11 +1,12 @@
 import sys
 
-from MyPlotter import MyPlotter
+from MyPlotter import MyPlotter, close
 
-plt = MyPlotter(4, 1)
+if __name__ == '__main__':
+    plt = MyPlotter()
 
-try:
-    plt.draw_plot()
-except KeyboardInterrupt:
-    plt.close()
-    sys.exit(0)
+    try:
+        plt.draw_plot()
+    except KeyboardInterrupt:
+        close()
+        sys.exit(0)
